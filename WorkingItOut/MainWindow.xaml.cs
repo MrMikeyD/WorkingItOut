@@ -86,7 +86,8 @@ namespace WorkingItOut
              }
              else if (e.Command == ApplicationCommands.Close)
              {
-                 
+                 // TODO: detach controls?
+                 this.Close();
              }
         }
 
