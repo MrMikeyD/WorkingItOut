@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:Workout="clr-namespace:WorkingItOut">
+    
+    <System:String x:Key="eDumbbellChestPress.Description">Dumbbell Chest Press</System:String>
+    <System:String x:Key="eDumbbellPullover.Description">Dumbbell Pullover</System:String>
+    <System:String x:Key="eDumbbellShoulderPress.Description">Dumbbell Shoulder Press</System:String>
+    <System:String x:Key="eDumbbellBicepCurl.Description">Dumbbell Bicep Curl</System:String>
+    <System:String x:Key="eTricepKickback.Description">Tripcep Kickback</System:String>
+    <System:String x:Key="eWristCurl.Description">Wrist Curl</System:String>
+    <System:String x:Key="eReverseWristCurl.Description">Reverse Wrist Curl</System:String>
+    <System:String x:Key="eCrunch.Description">Crunch</System:String>
+    <System:String x:Key="eSquat.Description">Squat</System:String>
+    <System:String x:Key="eLunge.Description">Lunge</System:String>
+
+    <Workout:ExerciseTypeToStringConverter x:Key="ExerciseTypeToStringConv" />
+    
+    <Style x:Key="MainWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowState" Value="Normal"/>
+        <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Grid x:Name="TemplateGrid" Background="#FFB4F5B4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="bd" Grid.Row="0" BorderBrush="Black">
+                            <ContentPresenter x:Name="cp" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Border>
+                        <StackPanel x:Name="ButtonStack" Grid.Row="1" Margin="0,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                            <Button x:Name="CloseButton" Content="Close" IsCancel="True" Width="55"/>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExerciseColumnHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                    <Grid x:Name="TemplateGrid" Background="#FFB4F5B4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Path=ExerciseType, Converter={StaticResource ExerciseTypeToStringConv}}" FontSize="12" FontWeight="Bold"
+                                   TextAlignment="Center" TextWrapping="Wrap"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StartColumnHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                    <Grid x:Name="TemplateGrid" Background="#FFB4F5B4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Path=ExerciseType, Converter={StaticResource ExerciseTypeToStringConv}}" FontSize="12" FontWeight="Bold"
+                                   TextAlignment="Center" TextWrapping="Wrap"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
