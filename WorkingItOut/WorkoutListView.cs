@@ -80,6 +80,8 @@ namespace WorkingItOut
             }
 
             workout.Exercises = exercises;
+
+            this.workouts.Add(workout);
         }
 
         /// <summary>
@@ -283,6 +285,14 @@ namespace WorkingItOut
             }
 
             /// <summary>
+            /// Gets the display start date
+            /// </summary>
+            public String DisplayStartDate
+            {
+                get { return this.startDate != null ? this.startDate.ToShortDateString() : String.Empty; }
+            }
+
+            /// <summary>
             /// Gets or sets the Start Date
             /// </summary>
             public DateTime StartDate
@@ -295,8 +305,17 @@ namespace WorkingItOut
                         this.startDate = value;
 
                         this.NotifyPropertyChanged(Workout.StartDatePropertyName);
+                        this.NotifyPropertyChanged(Workout.DisplayStartDatePropertyName);
                     }
                 }
+            }
+
+            /// <summary>
+            /// Gets the display end date
+            /// </summary>
+            public String DisplayEndDate
+            {
+                get { return this.endDate != null ? this.endDate.ToShortDateString() : String.Empty; }
             }
 
             /// <summary>
@@ -312,6 +331,7 @@ namespace WorkingItOut
                         this.endDate = value;
 
                         this.NotifyPropertyChanged(Workout.EndDatePropertyName);
+                        this.NotifyPropertyChanged(Workout.DisplayEndDatePropertyName);
                     }
                 }
             }
@@ -364,7 +384,9 @@ namespace WorkingItOut
 
             public event PropertyChangedEventHandler PropertyChanged;
             public const String BodyWeightPropertyName = "BodyWeight";
+            public const String DisplayStartDatePropertyName = "DisplayStartDate";
             public const String StartDatePropertyName = "StartDate";
+            public const String DisplayEndDatePropertyName = "DisplayEndDate";
             public const String EndDatePropertyName = " EndDate";
             public const String NumExercisesPropertyName = "NumExercises";
             public const String ExercisesPropertyName = "Exercises";

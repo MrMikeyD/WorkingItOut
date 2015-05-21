@@ -52,7 +52,10 @@
             <Workout:WorkoutListView x:Name="WorkoutList" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="3">
                 <Workout:WorkoutListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding }"/>
+                        <GridViewColumn Header="Start Date" DisplayMemberBinding="{Binding DisplayStartDate}"/>
+                        <GridViewColumn Header="End Date"   DisplayMemberBinding="{Binding DisplayEndDate}"/>
+                        <GridViewColumn Header="Weight"     DisplayMemberBinding="{Binding BodyWeight}"/>
+                        <GridViewColumn HeaderContainerStyle="{DynamicResource ExerciseColumnHeaderStyle}" DisplayMemberBinding="{Binding BodyWeight}"/>
                     </GridView>
                 </Workout:WorkoutListView.View>
             </Workout:WorkoutListView>

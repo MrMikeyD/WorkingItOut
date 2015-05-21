@@ -57,22 +57,4 @@
         </Setter>
     </Style>
 
-    <Style x:Key="StartColumnHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
-                    <Grid x:Name="TemplateGrid" Background="#FFB4F5B4">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Path=ExerciseType, Converter={StaticResource ExerciseTypeToStringConv}}" FontSize="12" FontWeight="Bold"
-                                   TextAlignment="Center" TextWrapping="Wrap"/>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
 </ResourceDictionary>
